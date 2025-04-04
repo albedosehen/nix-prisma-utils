@@ -253,7 +253,7 @@ pkgs.lib.warnIf (nixpkgs != null)
           if builtins.hasAttr "dependencies" packageLock then
             packageLock.dependencies.${"@prisma/engines-version"}.version
           else
-            packageLock.packages.${"node_modules/@prisma/engines-version"}.version;
+            packageLock.packages.${"node_modules/prisma/node_modules/@prisma/engines-version"}.version;
         commit = pkgs.lib.lists.last (pkgs.lib.strings.splitString "." version);
       in
       fromCommit commit;
